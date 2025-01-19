@@ -1,5 +1,5 @@
 ---
-title: "Blog1"
+title: "Predictive Modeling"
 listing:
   contents: posts
   sort: "date desc"

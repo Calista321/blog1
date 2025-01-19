@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "Blog1"
+  title: "Predictive Modeling"
   navbar:
     right:
       - about.qmd
