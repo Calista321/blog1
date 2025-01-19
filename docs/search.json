@@ -1,33 +1,5 @@
 [
   {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
-    "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts.\nCalista is here."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Predictive Modeling",
-    "section": "",
-    "text": "Unlocking the Power of Data: An Introduction to Predictive Modeling\n\n\n\n\n\n\nblog\n\n\n\n\n\n\n\n\n\nJan 17, 2025\n\n\nCalista Chen\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this blog"
-  },
-  {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
-    "section": "",
-    "text": "This is a post with executable code."
-  },
-  {
     "objectID": "posts/welcome/index.html#introduction",
     "href": "posts/welcome/index.html#introduction",
     "title": "Unlocking the Power of Data: An Introduction to Predictive Modeling",
@@ -89,5 +61,19 @@
     "title": "Unlocking the Power of Data: An Introduction to Predictive Modeling",
     "section": "Conclusion",
     "text": "Conclusion\nPredictive modeling transforms raw data into actionable insights, empowering stakeholders across industries. While tools like Ridge Regression provide valuable predictions, incorporating richer data and advanced techniques will unlock even greater potential. Whether you’re a data enthusiast or a decision-maker, predictive modeling offers a glimpse into the future—one data point at a time.\nSo why not dive deeper? Experiment with your own data, explore new techniques, and discover the power of predictive modeling for yourself."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this blog"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Predictive Modeling",
+    "section": "",
+    "text": "Unlocking the Power of Data: An Introduction to Predictive Modeling\n\n\n\n\n\n\nblog\n\n\n\n\n\n\n\n\n\nJan 17, 2025\n\n\nCalista Chen\n\n\n\n\n\n\nNo matching items"
   }
 ]
