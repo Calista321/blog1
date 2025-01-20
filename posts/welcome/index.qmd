@@ -66,6 +66,10 @@ Models are tested using metrics like:
 - **Accuracy**: Percentage of correct predictions.  
 - **Precision and Recall**: Balancing false positives and negatives.
 
+:::{.callout-warning}
+When evaluating predictive models, it's important to use appropriate evaluation metrics (such as accuracy, precision, recall, or AUC) that align with the specific problem and ensure that the model is tested on an independent test set to prevent overfitting. Relying solely on training accuracy or a single metric can lead to misleading conclusions, especially in imbalanced datasets where some metrics (like accuracy) might not reflect true model performance.
+:::
+
 ## Common Types of Predictive Models
 
 ### Linear Regression
@@ -129,6 +133,10 @@ Figure 5. The green line represents an overfitted model and the black line repre
 ![](Underfitting.png){fig-align="center" width="100%"}
 Figure 6. The blue dashed line represents an underfitted model. A straight line can never fit a parabola. This model is too simple.
 :::
+:::
+
+:::{.callout-note}
+When working with predictive modeling, it's crucial to balance model complexity and overfitting while ensuring the data is clean, relevant, and representative of the problem at hand.
 :::
 
 ## Interactive Example: Predicting House Prices
