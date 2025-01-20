@@ -25,7 +25,7 @@
     "href": "posts/welcome/index.html#common-types-of-predictive-models",
     "title": "Unlocking the Power of Data: An Introduction to Predictive Modeling",
     "section": "Common Types of Predictive Models",
-    "text": "Common Types of Predictive Models\n\nLinear Regression\nA simple model that predicts outcomes based on linear relationships between variables. For example, it might predict house prices based on size alone.\n\n\n\n\nLinear regression\n\n\n\n\n\nDecision Trees\nThese models split data into branches based on features, creating an easy-to-interpret “if-then” structure.\n\n\nRandom Forests and Ensembles\nBy combining multiple decision trees, these models improve accuracy and robustness.\n\n\nNeural Networks\nInspired by the human brain, neural networks handle complex problems like image recognition or natural language processing."
+    "text": "Common Types of Predictive Models\n\nLinear Regression\nA simple model that predicts outcomes based on linear relationships between variables. For example, it might predict house prices based on size alone.\n\n\n\n\nFigure 1. Linear regression\n\n\n\n\n\nDecision Trees\nThese models split data into branches based on features, creating an easy-to-interpret “if-then” structure.\n\n\n\n\nFigure 2. Decision tree\n\n\n\n\n\nRandom Forests and Ensembles\nBy combining multiple decision trees, these models improve accuracy and robustness.\n\n\n\n\nFigure 3. Random forest\n\n\n\n\n\nNeural Networks\nInspired by the human brain, neural networks handle complex problems like image recognition or natural language processing.\n\n\n\n\nFigure 4. Basic Neural Network Structure"
   },
   {
     "objectID": "posts/welcome/index.html#real-world-examples-of-predictive-modeling",
@@ -39,14 +39,14 @@
     "href": "posts/welcome/index.html#challenges-in-predictive-modeling",
     "title": "Unlocking the Power of Data: An Introduction to Predictive Modeling",
     "section": "Challenges in Predictive Modeling",
-    "text": "Challenges in Predictive Modeling\n\nData Quality\nPoor-quality data leads to unreliable predictions. Ensuring clean and accurate data is critical.\n\n\nBias in Models\nBiased data can result in unfair or inaccurate predictions. Awareness and mitigation strategies are essential.\n\n\nOverfitting vs. Underfitting\n\nOverfitting: The model is too tailored to training data and performs poorly on new data.\nUnderfitting: The model is too simple to capture meaningful patterns."
+    "text": "Challenges in Predictive Modeling\n\nData Quality\nPoor-quality data leads to unreliable predictions. Ensuring clean and accurate data is critical.\n\n\nBias in Models\nBiased data can result in unfair or inaccurate predictions. Awareness and mitigation strategies are essential.\n\n\nOverfitting vs. Underfitting\n\nOverfitting: The model is too tailored to training data and performs poorly on new data.\nUnderfitting: The model is too simple to capture meaningful patterns.\n\n\n\n\nFigure 5. The green line represents an overfitted model and the black line represents a regularized model. While the green line best follows the training data, it is too dependent on that data and is likely to have a higher error rate on new unseen data, illustrated by black-outlined dots, compared to the black line.\n\n\n Figure 6. The blue dashed line represents an underfitted model. A straight line can never fit a parabola. This model is too simple."
   },
   {
     "objectID": "posts/welcome/index.html#interactive-example-predicting-house-prices",
     "href": "posts/welcome/index.html#interactive-example-predicting-house-prices",
     "title": "Unlocking the Power of Data: An Introduction to Predictive Modeling",
     "section": "Interactive Example: Predicting House Prices",
-    "text": "Interactive Example: Predicting House Prices\nLet’s walk through a simplified example: predicting house prices.\n\nData Cleaning: Removing incomplete entries from a dataset of house attributes.\nFeature Selection: Using house size, presence of a garage, and number of bedrooms as key predictors.\nModel Building: Applying a linear regression model.\nVisualization: Plotting actual vs. predicted prices to evaluate performance."
+    "text": "Interactive Example: Predicting House Prices\nLet’s walk through a simplified example: predicting house prices. The dataset is from here.\n\nData Cleaning: Removing incomplete entries from a dataset of house attributes.\n\n\n\n\n\n\nFigure 7. The result of data cleaning\n\n\n\n\n\n\n\nFigure 8. The distribution of price\n\n\n\n\n\nFeature Selection: We select the following features:\n\n\nSquareFeet: The area of the house (in square feet).\n\nBedrooms: The number of bedrooms.\n\nBathrooms: The number of bathrooms.\n\nYearBuilt: The year the house was built.\n\nNeighborhood: Rural, Suburb, Urban (requires encoding).\n\n\nModel Building: Applying a linear regression model.\n\n\n\n\n\nFigure 9. The characteristic coefficients of the model\n\n\n\n\nVisualization: Plotting actual vs. predicted prices to evaluate performance.\n\n\n\n\n\nFigure 10. Actual vs. Predicted Prices"
   },
   {
     "objectID": "posts/welcome/index.html#how-can-predictive-modeling-be-applied-in-the-future",
@@ -61,6 +61,20 @@
     "title": "Unlocking the Power of Data: An Introduction to Predictive Modeling",
     "section": "Conclusion",
     "text": "Conclusion\nPredictive modeling transforms raw data into actionable insights, empowering stakeholders across industries. While tools like Ridge Regression provide valuable predictions, incorporating richer data and advanced techniques will unlock even greater potential. Whether you’re a data enthusiast or a decision-maker, predictive modeling offers a glimpse into the future—one data point at a time.\nSo why not dive deeper? Experiment with your own data, explore new techniques, and discover the power of predictive modeling for yourself."
+  },
+  {
+    "objectID": "posts/welcome/index.html#references",
+    "href": "posts/welcome/index.html#references",
+    "title": "Unlocking the Power of Data: An Introduction to Predictive Modeling",
+    "section": "References",
+    "text": "References\n\nWikipedia contributors. “Overfitting.” Wikipedia, The Free Encyclopedia, https://en.wikipedia.org/w/index.php?title=Overfitting&oldid=1261562364 (accessed January 20, 2025)."
+  },
+  {
+    "objectID": "code/housing.html",
+    "href": "code/housing.html",
+    "title": "Predictive Modeling",
+    "section": "",
+    "text": "# Step 1: Data Cleaning\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n# Load the dataset\ndata = pd.read_csv(\"housing_price_dataset.csv\")\n\n# Display basic information\nprint(data.info())\n\n# Check for missing values\nmissing_counts = data.isnull().sum()\nprint(\"\\nMissing values:\\n\", missing_counts)\n\n# Remove rows with missing values\ncleaned_data = data.dropna()\n\n# Summary of cleaning\nprint(f\"\\nOriginal data shape: {data.shape}\")\nprint(f\"Cleaned data shape: {cleaned_data.shape}\")\n\n\nsns.histplot(cleaned_data[\"Price\"], bins=30, kde=True, color=\"skyblue\")\nplt.title(\"Distribution of House Prices\")\nplt.xlabel(\"Price\")\nplt.ylabel(\"Frequency\")\nplt.show()\n\n\n# Step 2: Feature Selection\nfrom sklearn.preprocessing import OneHotEncoder\n\n# Encode categorical variable Neighborhood\nencoder = OneHotEncoder(sparse_output=False, handle_unknown=\"ignore\")\nneighborhood_encoded = encoder.fit_transform(cleaned_data[[\"Neighborhood\"]])\nneighborhood_df = pd.DataFrame(neighborhood_encoded, columns=encoder.get_feature_names_out([\"Neighborhood\"]))\n\n# Combine encoded features with numerical features\nX = pd.concat([cleaned_data[[\"SquareFeet\", \"Bedrooms\", \"Bathrooms\", \"YearBuilt\"]], neighborhood_df], axis=1)\ny = cleaned_data[\"Price\"]\n\n\n# Step 3: Model Building\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.linear_model import LinearRegression\nfrom sklearn.metrics import mean_squared_error, r2_score\n\n# Split the data into training and testing sets\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)\n\n# Train the model\nmodel = LinearRegression()\nmodel.fit(X_train, y_train)\n\n# Predict prices\ny_pred = model.predict(X_test)\n\n# Evaluate the model\nmse = mean_squared_error(y_test, y_pred)\nr2 = r2_score(y_test, y_pred)\nprint(f\"Mean Squared Error: {mse:.2f}\")\nprint(f\"R-squared: {r2:.2f}\")\n\n\ncoefficients = pd.DataFrame({\"Feature\": X.columns, \"Coefficient\": model.coef_})\ncoefficients = coefficients.sort_values(by=\"Coefficient\", ascending=False)\n\n# Plot coefficients\nplt.figure(figsize=(10, 6))\nsns.barplot(data=coefficients, x=\"Coefficient\", y=\"Feature\", palette=\"coolwarm\")\nplt.title(\"Feature Coefficients\")\nplt.xlabel(\"Impact on Price\")\nplt.ylabel(\"Feature\")\nplt.show()\n\n\n\nplt.figure(figsize=(8, 6))\nplt.scatter(y_test, y_pred, alpha=0.5, color=\"blue\")\nplt.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], color=\"red\", linestyle=\"--\")\nplt.title(\"Actual vs. Predicted House Prices\")\nplt.xlabel(\"Actual Prices\")\nplt.ylabel(\"Predicted Prices\")\nplt.show()"
   },
   {
     "objectID": "about.html",

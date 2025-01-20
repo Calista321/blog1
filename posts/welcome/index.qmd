@@ -72,17 +72,29 @@ Models are tested using metrics like:
 A simple model that predicts outcomes based on linear relationships between variables. For example, it might predict house prices based on size alone.
 
 ::: {.text-center}
-![[Linear regression](https://en.wikipedia.org/wiki/Linear_regression)](Linear_regression.png){width=70%}
+![Figure 1. [Linear regression](https://en.wikipedia.org/wiki/Linear_regression)](Linear_regression.png){width=50%}
 :::
 
 ### Decision Trees
 These models split data into branches based on features, creating an easy-to-interpret “if-then” structure.
 
+::: {.text-center}
+![Figure 2. [Decision tree](https://www.kdnuggets.com/2020/01/decision-tree-algorithm-explained.html)](decision_tree.png){width=70%}
+:::
+
 ### Random Forests and Ensembles
 By combining multiple decision trees, these models improve accuracy and robustness.
 
+::: {.text-center}
+![Figure 3. [Random forest](https://medium.com/@roiyeho/random-forests-98892261dc49)](random_forest.png){width=50%}
+:::
+
 ### Neural Networks
 Inspired by the human brain, neural networks handle complex problems like image recognition or natural language processing.
+
+::: {.text-center}
+![Figure 4. [Basic Neural Network Structure](https://towardsdatascience.com/designing-your-neural-networks-a5e4617027ed)](neural_network.png){width=70%}
+:::
 
 ## Real-world Examples of Predictive Modeling
 
@@ -107,14 +119,54 @@ Biased data can result in unfair or inaccurate predictions. Awareness and mitiga
 - **Overfitting**: The model is too tailored to training data and performs poorly on new data.
 - **Underfitting**: The model is too simple to capture meaningful patterns.
 
+::: {.grid .justify-center}
+::: {.g-col-6}
+![](Overfitting.png){fig-align="center" width="86%"}  
+Figure 5. The green line represents an overfitted model and the black line represents a regularized model. While the green line best follows the training data, it is too dependent on that data and is likely to have a higher error rate on new unseen data, illustrated by black-outlined dots, compared to the black line.
+:::
+
+::: {.g-col-6}
+![](Underfitting.png){fig-align="center" width="100%"}
+Figure 6. The blue dashed line represents an underfitted model. A straight line can never fit a parabola. This model is too simple.
+:::
+:::
+
 ## Interactive Example: Predicting House Prices
 
-Let’s walk through a simplified example: predicting house prices.
+Let’s walk through a simplified example: predicting house prices. The dataset is from [here](https://www.kaggle.com/datasets/muhammadbinimran/housing-price-prediction-data/data).
 
 1. **Data Cleaning**: Removing incomplete entries from a dataset of house attributes.
-2. **Feature Selection**: Using house size, presence of a garage, and number of bedrooms as key predictors.
+
+::: {.grid .justify-center}
+::: {.g-col-6}
+![Figure 7. The result of data cleaning](step1.png){fig-align="center" width="90%"} 
+:::
+
+::: {.g-col-6}
+![Figure 8. The distribution of price](step1_2.png){fig-align="center" width="100%"}
+:::
+:::
+
+2. **Feature Selection**: 
+We select the following features:
+
+- SquareFeet: The area of the house (in square feet).  
+- Bedrooms: The number of bedrooms.  
+- Bathrooms: The number of bathrooms.  
+- YearBuilt: The year the house was built.  
+- Neighborhood: Rural, Suburb, Urban (requires encoding).  
+
 3. **Model Building**: Applying a linear regression model.
+
+::: {.text-center}
+![Figure 9. The characteristic coefficients of the model](step3.png){width=100%}
+:::
+
 4. **Visualization**: Plotting actual vs. predicted prices to evaluate performance.
+
+::: {.text-center}
+![Figure 10. Actual vs. Predicted Prices](step4.png){width=80%}
+:::
 
 ## How Can Predictive Modeling Be Applied in the Future?
 
@@ -129,3 +181,7 @@ As models grow more powerful, ethical considerations like fairness and transpare
 Predictive modeling transforms raw data into actionable insights, empowering stakeholders across industries. While tools like Ridge Regression provide valuable predictions, incorporating richer data and advanced techniques will unlock even greater potential. Whether you’re a data enthusiast or a decision-maker, predictive modeling offers a glimpse into the future—one data point at a time.
 
 So why not dive deeper? Experiment with your own data, explore new techniques, and discover the power of predictive modeling for yourself.
+
+## References
+
+1. Wikipedia contributors. "Overfitting." *Wikipedia, The Free Encyclopedia,* https://en.wikipedia.org/w/index.php?title=Overfitting&oldid=1261562364 (accessed January 20, 2025).

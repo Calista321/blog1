@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Calista Chen">
-<meta name="dcterms.date" content="2025-01-17">
 
-<title>Unlocking the Power of Data: An Introduction to Predictive Modeling – Predictive Modeling</title>
+<title>housing – Predictive Modeling</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,25 +20,59 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,17 +102,17 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Predictive Modeling</span>
     </a>
   </div>
@@ -91,7 +123,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html"> 
+    <a class="nav-link" href="../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -112,285 +144,105 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title">Unlocking the Power of Data: An Introduction to Predictive Modeling</h1>
-                                <div class="quarto-categories">
-                <div class="quarto-category">blog</div>
-              </div>
-                  </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
-
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>Calista Chen </p>
-            </div>
-    </div>
-      
-      <div>
-      <div class="quarto-title-meta-heading">Published</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date">January 17, 2025</p>
-      </div>
-    </div>
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 
 
 
-
-<p><img src="1.png" class="img-fluid"></p>
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>Data science is revolutionizing the way we make decisions, from predicting the weather to recommending the next movie to watch. One of its most fascinating tools is predictive modeling—a method used to forecast future outcomes based on past data. This blog will guide you through the fundamentals of predictive modeling, explain how it works, and showcase its real-world applications, making it accessible even for those new to the topic.</p>
-</section>
-<section id="what-is-predictive-modeling" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-predictive-modeling">What is Predictive Modeling?</h2>
-<p>Predictive modeling is the process of using data and statistical algorithms to make predictions about future events. Think of it as a crystal ball powered by data: by analyzing historical trends, we can anticipate what’s likely to happen next.</p>
-<section id="real-world-analogy" class="level3">
-<h3 class="anchored" data-anchor-id="real-world-analogy">Real-world Analogy</h3>
-<p>Imagine a weather forecast. Meteorologists analyze historical weather patterns and current conditions to predict tomorrow’s weather. Predictive modeling in data science works similarly but spans many domains, from healthcare to finance.</p>
-</section>
-<section id="why-it-matters" class="level3">
-<h3 class="anchored" data-anchor-id="why-it-matters">Why It Matters</h3>
-<p>Predictive modeling has become a cornerstone in industries such as:</p>
-<div class="grid justify-center">
-<div class="g-col-4">
-<p><img src="healthcare.png" class="img-fluid quarto-figure quarto-figure-center" style="width:100.0%" alt="Healthcare: Predicting patient outcomes."> <strong>Healthcare</strong><br>
-Predicting patient outcomes.</p>
+<div id="cell-0" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1: Data Cleaning</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the dataset</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.read_csv(<span class="st">"housing_price_dataset.csv"</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Display basic information</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data.info())</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Check for missing values</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>missing_counts <span class="op">=</span> data.isnull().<span class="bu">sum</span>()</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Missing values:</span><span class="ch">\n</span><span class="st">"</span>, missing_counts)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove rows with missing values</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>cleaned_data <span class="op">=</span> data.dropna()</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Summary of cleaning</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Original data shape: </span><span class="sc">{</span>data<span class="sc">.</span>shape<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Cleaned data shape: </span><span class="sc">{</span>cleaned_data<span class="sc">.</span>shape<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="g-col-4">
-<p><img src="finance.jpg" class="img-fluid quarto-figure quarto-figure-center" style="width:100.0%" alt="Finance: Assessing credit risk and detecting fraud."> <strong>Finance</strong><br>
-Assessing credit risk and detecting fraud.</p>
+<div id="cell-1" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>sns.histplot(cleaned_data[<span class="st">"Price"</span>], bins<span class="op">=</span><span class="dv">30</span>, kde<span class="op">=</span><span class="va">True</span>, color<span class="op">=</span><span class="st">"skyblue"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Distribution of House Prices"</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Price"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Frequency"</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="g-col-4">
-<p><img src="e_commerce.jpg" class="img-fluid quarto-figure quarto-figure-center" style="width:100.0%" alt="E-commerce: Recommending products based on user preferences."> <strong>E-commerce</strong><br>
-Recommending products based on user preferences.</p>
+<div id="cell-2" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2: Feature Selection</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> OneHotEncoder</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Encode categorical variable Neighborhood</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>encoder <span class="op">=</span> OneHotEncoder(sparse_output<span class="op">=</span><span class="va">False</span>, handle_unknown<span class="op">=</span><span class="st">"ignore"</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>neighborhood_encoded <span class="op">=</span> encoder.fit_transform(cleaned_data[[<span class="st">"Neighborhood"</span>]])</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>neighborhood_df <span class="op">=</span> pd.DataFrame(neighborhood_encoded, columns<span class="op">=</span>encoder.get_feature_names_out([<span class="st">"Neighborhood"</span>]))</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine encoded features with numerical features</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> pd.concat([cleaned_data[[<span class="st">"SquareFeet"</span>, <span class="st">"Bedrooms"</span>, <span class="st">"Bathrooms"</span>, <span class="st">"YearBuilt"</span>]], neighborhood_df], axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> cleaned_data[<span class="st">"Price"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div id="cell-3" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 3: Model Building</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> mean_squared_error, r2_score</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Split the data into training and testing sets</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Train the model</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> LinearRegression()</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>model.fit(X_train, y_train)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Predict prices</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> model.predict(X_test)</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluate the model</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>mse <span class="op">=</span> mean_squared_error(y_test, y_pred)</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>r2 <span class="op">=</span> r2_score(y_test, y_pred)</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Mean Squared Error: </span><span class="sc">{</span>mse<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"R-squared: </span><span class="sc">{</span>r2<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-</section>
-<section id="how-does-predictive-modeling-work" class="level2">
-<h2 class="anchored" data-anchor-id="how-does-predictive-modeling-work">How Does Predictive Modeling Work?</h2>
-<section id="data-collection" class="level3">
-<h3 class="anchored" data-anchor-id="data-collection">1. Data Collection</h3>
-<p>The process begins with gathering relevant data, which could include structured data (e.g., sales figures) or unstructured data (e.g., text or images).</p>
-</section>
-<section id="model-building" class="level3">
-<h3 class="anchored" data-anchor-id="model-building">2. Model Building</h3>
-<section id="data-cleaning-and-preparation" class="level4">
-<h4 class="anchored" data-anchor-id="data-cleaning-and-preparation">Data Cleaning and Preparation</h4>
-<p>Before building a model, data must be cleaned to remove duplicates, fill missing values, and ensure accuracy.</p>
-</section>
-<section id="feature-selection" class="level4">
-<h4 class="anchored" data-anchor-id="feature-selection">Feature Selection</h4>
-<p>Key variables, or features, are identified. For instance, house size, number of rooms, and location might be crucial for predicting house prices.</p>
-</section>
-<section id="choosing-a-model" class="level4">
-<h4 class="anchored" data-anchor-id="choosing-a-model">Choosing a Model</h4>
-<p>Popular models include linear regression, decision trees, and neural networks. Each has strengths depending on the problem.</p>
-</section>
-</section>
-<section id="model-evaluation" class="level3">
-<h3 class="anchored" data-anchor-id="model-evaluation">3. Model Evaluation</h3>
-<p>Models are tested using metrics like:<br>
-- <strong>Accuracy</strong>: Percentage of correct predictions.<br>
-- <strong>Precision and Recall</strong>: Balancing false positives and negatives.</p>
-</section>
-</section>
-<section id="common-types-of-predictive-models" class="level2">
-<h2 class="anchored" data-anchor-id="common-types-of-predictive-models">Common Types of Predictive Models</h2>
-<section id="linear-regression" class="level3">
-<h3 class="anchored" data-anchor-id="linear-regression">Linear Regression</h3>
-<p>A simple model that predicts outcomes based on linear relationships between variables. For example, it might predict house prices based on size alone.</p>
-<div class="text-center">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="Linear_regression.png" class="img-fluid figure-img" style="width:50.0%"></p>
-<figcaption>Figure 1. <a href="https://en.wikipedia.org/wiki/Linear_regression">Linear regression</a></figcaption>
-</figure>
+<div id="cell-4" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>coefficients <span class="op">=</span> pd.DataFrame({<span class="st">"Feature"</span>: X.columns, <span class="st">"Coefficient"</span>: model.coef_})</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>coefficients <span class="op">=</span> coefficients.sort_values(by<span class="op">=</span><span class="st">"Coefficient"</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot coefficients</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>sns.barplot(data<span class="op">=</span>coefficients, x<span class="op">=</span><span class="st">"Coefficient"</span>, y<span class="op">=</span><span class="st">"Feature"</span>, palette<span class="op">=</span><span class="st">"coolwarm"</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Feature Coefficients"</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Impact on Price"</span>)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Feature"</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div id="cell-5" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>plt.scatter(y_test, y_pred, alpha<span class="op">=</span><span class="fl">0.5</span>, color<span class="op">=</span><span class="st">"blue"</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>plt.plot([y_test.<span class="bu">min</span>(), y_test.<span class="bu">max</span>()], [y_test.<span class="bu">min</span>(), y_test.<span class="bu">max</span>()], color<span class="op">=</span><span class="st">"red"</span>, linestyle<span class="op">=</span><span class="st">"--"</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Actual vs. Predicted House Prices"</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Actual Prices"</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Predicted Prices"</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="decision-trees" class="level3">
-<h3 class="anchored" data-anchor-id="decision-trees">Decision Trees</h3>
-<p>These models split data into branches based on features, creating an easy-to-interpret “if-then” structure.</p>
-<div class="text-center">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="decision_tree.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption>Figure 2. <a href="https://www.kdnuggets.com/2020/01/decision-tree-algorithm-explained.html">Decision tree</a></figcaption>
-</figure>
-</div>
-</div>
-</section>
-<section id="random-forests-and-ensembles" class="level3">
-<h3 class="anchored" data-anchor-id="random-forests-and-ensembles">Random Forests and Ensembles</h3>
-<p>By combining multiple decision trees, these models improve accuracy and robustness.</p>
-<div class="text-center">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="random_forest.png" class="img-fluid figure-img" style="width:50.0%"></p>
-<figcaption>Figure 3. <a href="https://medium.com/@roiyeho/random-forests-98892261dc49">Random forest</a></figcaption>
-</figure>
-</div>
-</div>
-</section>
-<section id="neural-networks" class="level3">
-<h3 class="anchored" data-anchor-id="neural-networks">Neural Networks</h3>
-<p>Inspired by the human brain, neural networks handle complex problems like image recognition or natural language processing.</p>
-<div class="text-center">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="neural_network.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption>Figure 4. <a href="https://towardsdatascience.com/designing-your-neural-networks-a5e4617027ed">Basic Neural Network Structure</a></figcaption>
-</figure>
-</div>
-</div>
-</section>
-</section>
-<section id="real-world-examples-of-predictive-modeling" class="level2">
-<h2 class="anchored" data-anchor-id="real-world-examples-of-predictive-modeling">Real-world Examples of Predictive Modeling</h2>
-<section id="healthcare" class="level3">
-<h3 class="anchored" data-anchor-id="healthcare">Healthcare</h3>
-<p>Predictive models help identify patients at risk for certain conditions, enabling earlier interventions.</p>
-</section>
-<section id="e-commerce" class="level3">
-<h3 class="anchored" data-anchor-id="e-commerce">E-commerce</h3>
-<p>Retailers use models to recommend products, enhancing customer satisfaction and boosting sales.</p>
-</section>
-<section id="finance" class="level3">
-<h3 class="anchored" data-anchor-id="finance">Finance</h3>
-<p>Banks leverage predictive models to detect fraudulent transactions and assess loan risks.</p>
-</section>
-</section>
-<section id="challenges-in-predictive-modeling" class="level2">
-<h2 class="anchored" data-anchor-id="challenges-in-predictive-modeling">Challenges in Predictive Modeling</h2>
-<section id="data-quality" class="level3">
-<h3 class="anchored" data-anchor-id="data-quality">Data Quality</h3>
-<p>Poor-quality data leads to unreliable predictions. Ensuring clean and accurate data is critical.</p>
-</section>
-<section id="bias-in-models" class="level3">
-<h3 class="anchored" data-anchor-id="bias-in-models">Bias in Models</h3>
-<p>Biased data can result in unfair or inaccurate predictions. Awareness and mitigation strategies are essential.</p>
-</section>
-<section id="overfitting-vs.-underfitting" class="level3">
-<h3 class="anchored" data-anchor-id="overfitting-vs.-underfitting">Overfitting vs.&nbsp;Underfitting</h3>
-<ul>
-<li><strong>Overfitting</strong>: The model is too tailored to training data and performs poorly on new data.</li>
-<li><strong>Underfitting</strong>: The model is too simple to capture meaningful patterns.</li>
-</ul>
-<div class="grid justify-center">
-<div class="g-col-6">
-<p><img src="Overfitting.png" class="img-fluid quarto-figure quarto-figure-center" style="width:86.0%"><br>
-Figure 5. The green line represents an overfitted model and the black line represents a regularized model. While the green line best follows the training data, it is too dependent on that data and is likely to have a higher error rate on new unseen data, illustrated by black-outlined dots, compared to the black line.</p>
-</div>
-<div class="g-col-6">
-<p><img src="Underfitting.png" class="img-fluid quarto-figure quarto-figure-center" style="width:100.0%"> Figure 6. The blue dashed line represents an underfitted model. A straight line can never fit a parabola. This model is too simple.</p>
-</div>
-</div>
-</section>
-</section>
-<section id="interactive-example-predicting-house-prices" class="level2">
-<h2 class="anchored" data-anchor-id="interactive-example-predicting-house-prices">Interactive Example: Predicting House Prices</h2>
-<p>Let’s walk through a simplified example: predicting house prices. The dataset is from <a href="https://www.kaggle.com/datasets/muhammadbinimran/housing-price-prediction-data/data">here</a>.</p>
-<ol type="1">
-<li><strong>Data Cleaning</strong>: Removing incomplete entries from a dataset of house attributes.</li>
-</ol>
-<div class="grid justify-center">
-<div class="g-col-6">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="step1.png" class="img-fluid figure-img" style="width:90.0%"></p>
-<figcaption>Figure 7. The result of data cleaning</figcaption>
-</figure>
-</div>
-</div>
-<div class="g-col-6">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="step1_2.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>Figure 8. The distribution of price</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<ol start="2" type="1">
-<li><strong>Feature Selection</strong>: We select the following features:</li>
-</ol>
-<ul>
-<li>SquareFeet: The area of the house (in square feet).<br>
-</li>
-<li>Bedrooms: The number of bedrooms.<br>
-</li>
-<li>Bathrooms: The number of bathrooms.<br>
-</li>
-<li>YearBuilt: The year the house was built.<br>
-</li>
-<li>Neighborhood: Rural, Suburb, Urban (requires encoding).</li>
-</ul>
-<ol start="3" type="1">
-<li><strong>Model Building</strong>: Applying a linear regression model.</li>
-</ol>
-<div class="text-center">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="step3.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>Figure 9. The characteristic coefficients of the model</figcaption>
-</figure>
-</div>
-</div>
-<ol start="4" type="1">
-<li><strong>Visualization</strong>: Plotting actual vs.&nbsp;predicted prices to evaluate performance.</li>
-</ol>
-<div class="text-center">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="step4.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<figcaption>Figure 10. Actual vs.&nbsp;Predicted Prices</figcaption>
-</figure>
-</div>
-</div>
-</section>
-<section id="how-can-predictive-modeling-be-applied-in-the-future" class="level2">
-<h2 class="anchored" data-anchor-id="how-can-predictive-modeling-be-applied-in-the-future">How Can Predictive Modeling Be Applied in the Future?</h2>
-<section id="ai-and-automation" class="level3">
-<h3 class="anchored" data-anchor-id="ai-and-automation">AI and Automation</h3>
-<p>Predictive modeling will continue driving advancements in artificial intelligence, enabling smarter automation.</p>
-</section>
-<section id="ethical-considerations" class="level3">
-<h3 class="anchored" data-anchor-id="ethical-considerations">Ethical Considerations</h3>
-<p>As models grow more powerful, ethical considerations like fairness and transparency will become increasingly important.</p>
-</section>
-</section>
-<section id="conclusion" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p>Predictive modeling transforms raw data into actionable insights, empowering stakeholders across industries. While tools like Ridge Regression provide valuable predictions, incorporating richer data and advanced techniques will unlock even greater potential. Whether you’re a data enthusiast or a decision-maker, predictive modeling offers a glimpse into the future—one data point at a time.</p>
-<p>So why not dive deeper? Experiment with your own data, explore new techniques, and discover the power of predictive modeling for yourself.</p>
-</section>
-<section id="references" class="level2">
-<h2 class="anchored" data-anchor-id="references">References</h2>
-<ol type="1">
-<li>Wikipedia contributors. “Overfitting.” <em>Wikipedia, The Free Encyclopedia,</em> https://en.wikipedia.org/w/index.php?title=Overfitting&amp;oldid=1261562364 (accessed January 20, 2025).</li>
-</ol>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
