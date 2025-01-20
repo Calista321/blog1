@@ -1,7 +1,7 @@
 ---
 title: "Unlocking the Power of Data: An Introduction to Predictive Modeling"
 author: "Calista Chen"
-date: "2025-01-17"
+date: "2025-01-18"
 categories: [blog]
 ---
 
